@@ -43,35 +43,10 @@ if (env === 'test') {
     /**
      * Listen on provided port, on all network interfaces...
      */
-    if (env === 'production' || env === 'stage') {
-      // const clientCertificateAuth = require('client-certificate-auth');
-      // checking client certificate here so only requests coming from API Gateway can get thru
-      const checkAuth = cert => cert.subject.CN === 'ApiGateway';
-      // install middleware
-      // app.use(clientCertificateAuth(checkAuth));
-      swaggerExpress.register(app);
-
-      const SSLOptions = {
-        key: fs.readFileSync('betterpt-key.pem'),
-        cert: fs.readFileSync('betterpt-crt.pem'),
-        ca: [fs.readFileSync('gd-ca-crt.pem'), fs.readFileSync('client-crt.pem')],
-        requestCert: true,
-        // rejectUnauthorized is set to true here so no other entity can request from
-        // our backend except the API Gateway
-        rejectUnauthorized: true
-      };
-
-      const httpsServer = https.createServer(SSLOptions, app);
-
-      app.use(customSwaggerErrorHandler);
-      db.didConnect
-        .then(() => httpsServer.listen(port));
-    } else {
-      swaggerExpress.register(app);
-      app.use(customSwaggerErrorHandler);
-      db.didConnect
-        .then(() => app.listen(port))
-        .then(() => console.log(`App is listening on port ${port}`));
-    }
+    swaggerExpress.register(app);
+    app.use(customSwaggerErrorHandler);
+    db.didConnect
+      .then(() => app.listen(port))
+      .then(() => console.log(`App is listening on port ${port}`));
   });
 }
