@@ -1,0 +1,46 @@
+{
+  "name": "razom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=development node app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.118.0",
+    "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
+    "client-certificate-auth": "^0.3.0",
+    "express": "^4.12.3",
+    "jsonwebtoken": "^8.0.1",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "nodemon": "^1.12.1",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.27.0",
+    "sequelize-cli": "^2.7.0",
+    "swagger-express-mw": "^0.7.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-shallow-deep-equal": "^1.4.6",
+    "chalk": "^2.3.0",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-watch": "^2.1.14",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.15",
+    "nyc": "^11.2.1",
+    "supertest": "^3.0.0",
+    "swagger": "^0.7.5"
+  },
+  "author": "",
+  "license": "ISC"
+}

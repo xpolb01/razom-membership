@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "razom_dev",
+    "host": "localhost",
+    "port": "5432",
+    "logging": true,
+    "dialect": "postgres"
+  }
+}
